@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="SparkPlayer_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqB-Pl-z3N">
+                                <rect key="frame" x="0.0" y="44" width="375" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="ymW-we-Ch1"/>
+                                </constraints>
+                            </view>
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsS-Qm-v0A">
+                                <rect key="frame" x="56" y="252" width="263" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="USm-jm-DDN"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="n79-F5-3MM" kind="embed" identifier="native" id="lCD-RF-6Ha"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aqB-Pl-z3N" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="0Dh-Yc-4bF"/>
+                            <constraint firstItem="fsS-Qm-v0A" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="40" id="DHA-ss-M1Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fsS-Qm-v0A" secondAttribute="trailing" constant="40" id="bah-L5-369"/>
+                            <constraint firstItem="fsS-Qm-v0A" firstAttribute="top" secondItem="aqB-Pl-z3N" secondAttribute="bottom" constant="8" symbolic="YES" id="hAs-3D-QpS"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="aqB-Pl-z3N" secondAttribute="bottom" priority="999" constant="398" id="nrb-tN-P61"/>
+                            <constraint firstItem="aqB-Pl-z3N" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="o8H-lv-U2v"/>
+                            <constraint firstAttribute="trailing" secondItem="aqB-Pl-z3N" secondAttribute="trailing" id="qwa-kG-6N5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playerView" destination="aqB-Pl-z3N" id="lw4-TQ-ky6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31.875" y="32.74647887323944"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="cIJ-QO-x6C">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="n79-F5-3MM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OiU-wv-9Ss" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="746" y="33"/>
+        </scene>
+    </scenes>
+</document>
