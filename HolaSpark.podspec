@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
-  s.name                  = 'SparkSDK'
+  s.name                  = 'HolaSpark'
   s.version               = '0.0.1'
-  s.summary               = 'Spark features integration SDK'
-  s.description           = 'Integrate favourite Spark features in your iOS apps'
+  s.summary               = 'HolaSpark integration SDK'
+  s.description           = 'Integrate favorite HolaSpark features in your iOS apps'
 
   s.homepage              = 'https://holaspark.com'
   s.license               = { :type => 'holaspark.com' }
