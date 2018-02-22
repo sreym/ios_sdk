@@ -11,8 +11,8 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files          = 'dist/spark_api.h'
-  s.public_header_files   = 'dist/spark_api.h'
-  s.vendored_libraries    = 'dist/libspark_sdk.a'
+  s.source_files          = 'spark_sdk/dist/spark_api.h'
+  s.public_header_files   = 'spark_sdk/dist/spark_api.h'
+  s.vendored_libraries    = 'spark_sdk/dist/libspark_sdk.a'
   s.libraries             = 'spark_sdk'
 end
