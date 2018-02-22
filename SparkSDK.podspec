@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.homepage              = 'https://holaspark.com'
   s.license               = { :type => 'holaspark.com' }
   s.author                = 'holaspark.com'
-  s.source                = { :git => 'https://github.com/hola/spark_ios_sdk.git', :tag => s.version.to_s }
+  s.source                = { :git => 'https://github.com/hola/spark_ios_sdk.git', :tag => 'spark-sdk-v'+s.version.to_s }
 
   s.ios.deployment_target = '10.0'
 
