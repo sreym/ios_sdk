@@ -13,7 +13,19 @@ pod 'HolaSpark', '~> 0.0'
 
 - Manual installation:
 
-TODO
+-- Copy **libspark_sdk.a** and **spark_api.h** to your project's folder, e.g.:
+```
+<myapproot>
+  <myapp>
+  <myapp>.xcodeproj
+  spark_sdk
+    libspark_sdk.a
+    spark_api.h
+```
+-- Add the new folder to XCode project\
+-- Open your app configuration settings\
+-- Switch to "Build Phases" > "Link Binary With Libraries" > "+" > "Add other"\
+-- Select libspark_sdk.a
 
 ## Usage
 
