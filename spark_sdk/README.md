@@ -31,18 +31,36 @@ pod 'HolaSpark', '~> 0.0'
 
 Initialize Spark SDK with your customer id:
 ```objc
+// Objective-C example
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)options
 {
     SparkAPI *api = [SparkAPI getSparkAPI:@"<customer_id>"];
     ...
 }
 ```
+```swift
+// Swift example
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
+{
+    let api = SparkAPI.getSparkAPI("<customer_id>")
+    ...
+}
+```
 
 NOTE: providing customer id is required only for the first provisioning call, in all subsequent calls from all around your project you can omit it and call without it:
 ```objc
+// Objective-C example
 - (IBAction)onSomeButtonClicked:(UIButton *)sender
 {
     SparkAPI *api = [SparkAPI getSparkAPI:nil];
+    ...
+}
+```
+```objc
+// Swift example
+@IBAction func onSomeButtonClicked(sender: UIButton){
+{
+    let api = SparkAPI.getSparkAPI(nil);
     ...
 }
 ```
@@ -56,6 +74,7 @@ Send rich notifications with video previews. Both local and remote notifications
 You can add this code to didFinishLaunchingWithOptions method of UIAppDelegate protocol implementation.
 
 ```objc
+// Objective-C example
 [api registerForNotifications:
     UNAuthorizationOptionAlert|UNAuthorizationOptionSound
     usingRemoteNotifications:YES
@@ -64,11 +83,24 @@ You can add this code to didFinishLaunchingWithOptions method of UIAppDelegate p
             NSLog(@"registering for notifications failed: error=%@", error);
     }];
 ```
+```swift
+// Swift example
+api.register(forNotifications: [.alert, .sound], usingRemoteNotifications: true) { (error) in
+     print("notification registration result:", error != nil ? error! : "success")
+}
+```
 
 **2. Implement didRegisterForRemoteNotificationsWithDeviceToken delegate method (remote notifications only)**
 ```objc
+// Objective-C example
 - (BOOL) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
+    // provide your remote notification server with deviceToken to communicate to this app
+}
+```
+```swift
+// Swift example
+func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     // provide your remote notification server with deviceToken to communicate to this app
 }
 ```
@@ -77,18 +109,34 @@ You can add this code to didFinishLaunchingWithOptions method of UIAppDelegate p
 
 Spark will automatically download a preview for your video from our servers and attach it to the notification payload.
 ```objc
+// Objective-C example
 [api sendPreviewNotification: [NSURL URLWithString:@"https://yourcdn.com/path_to_video/video.m3u8"]
     withTitle:@"Watch!" withSubtitle:nil
     withBody:@"Dani Alves gets kicked out after shouting at referee in PSG defeat at Lyon"
     withTrigger:[UNTimeIntervalNotificationTrigger triggerWithTimeInterval:10 repeats:false]
     withBeforeSendBlock:^(UNMutableNotificationContent *content){
-        // use this block to customize the notification payload before sending out to notification center
+        // use this block to customize the notification payload before sending it out to the notification center
         content.sound = [UNNotificationSound soundNamed:@"custom_sound.aiff"];
     }
     withCompletionBlock:^(NSError *error){
         if (error)
             NSLog(@"local notification failed, error=%@", error);
     }];
+```
+```swift
+// Swift example
+api.sendPreviewNotification(URL(string: "https://yourcdn.com/path_to_video/video.m3u8"),
+    withTitle: "Watch", withSubtitle: nil, withBody: "Body",
+    withTriggerOn: UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false),
+    withBeforeSend: { (content) -> Bool in
+        // use this block to customize the notification payload before sending it out to the notification center
+        content!.sound = UNNotificationSound(named: "custom_sound.aiff")
+        return true
+    },
+    withCompletionBlock: { (error) in
+        if (error)
+            print(@"local notification failed, error=", error!);
+    })
 ```
 
 **4. Send remote notifications**
@@ -134,16 +182,21 @@ Follow these steps to add NotificationServiceExtension to your project:
 - Fill up extension details (product name, organization etc) and click on "Finish" button: XCode will add a new folder to your project with NotificationService class and extension's Info.plist
 - Inherit NotificationService class from Spark (replace original contents of the files):
 ```objc
+// Objective-C example
+
 // NotificationService.h
 #import "spark_api.h"
 @interface NotificationService: SparkPreviewNotificationService
 @end
-```
-```objc
+
 // NotificationService.m
 #import "NotificationService.h"
 @implementation NotificationService
 @end
+```
+```swift
+// Swift example
+TODO
 ```
 - Link NotificationServiceExtension target against Spark library\
 Using CocoaPods:\
@@ -153,7 +206,7 @@ Manually:\
 -- Open up "Link Binary With Libraries" section\
 -- Add Spark library
 
-**5. Autoplay/loop notification preview (better UX)**
+**5. Customize notification preview with autoplay/looping (better UX)**
 
 By default, when notification center presents a notification with a media attachment, user must click on "Play" button to view the video. For better UX, we recommend registering a custom view that will autoplay/loop the preview video. Spark SDK provides a class to handle it which needs to be integrated in NotificationContentExtension of your app.
 
@@ -166,16 +219,21 @@ XCode will add a new folder to your project with NotificationViewController clas
 
 - Inherit NotificationViewController class from Spark (replace original contents of the files):
 ```objc
+// Objective-C example
+
 // NotificationViewController.h
 #import "spark_api.h"
 @interface NotificationViewController: SparkPreviewNotificationViewController
 @end
-```
-```objc
+
 // NotificationViewController.m
 #import "NotificationViewController.h"
 @implementation NotificationViewController
 @end
+```
+```swift
+// Swift example
+TODO
 ```
 
 - Configure your extension properties with corresponding category (it is basically a route that defines which notifications to apply it to) and original content size ratio (notification size gets resized automatically based on video ratio, but we assume 16:9 to avoid redundant transformation on initial show).
