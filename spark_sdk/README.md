@@ -2,7 +2,7 @@
 
 ## Description
 
-TODO
+Spark SDK enables native support of Spark video features in your iOS apps.
 
 ## Installation
 - Using [CocoaPods](https://cocoapods.org):
