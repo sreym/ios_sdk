@@ -142,11 +142,9 @@ Follow these steps to add NotificationServiceExtension to your project:
 @implementation NotificationService
 @end
 ```
-- Link NotificationServiceExtension target against Spark library
-
+- Link NotificationServiceExtension target against Spark library\
 Using CocoaPods:\
--- Rebuild your cocoa workspace so Spark library will link with all targets automatically
-
+-- Rebuild your cocoa workspace so Spark library will link with all targets automatically\
 Manually:\
 -- Go to "Build Phases" of your NotificationServiceExtension target settings\
 -- Open up "Link Binary With Libraries" section\
@@ -182,11 +180,9 @@ Goto Info.plist > NSExtension > NSExtensionAttributes and change its attributes 
 -- UNNotificationExtensionCategory = "spark-preview"\
 -- UNNotificationExtensionInitialContentSizeRadio = 0.5625
 
-- Link NotificationContentExtension target against Spark library
-
+- Link NotificationContentExtension target against Spark library\
 Using CocoaPods:\
--- Rebuild your cocoa workspace so Spark library will link with all targets automatically
-
+-- Rebuild your cocoa workspace so Spark library will link with all targets automatically\
 Manually:\
 -- Go to "Build Phases" of your NotificationContentExtension target settings\
 -- Open up "Link Binary With Libraries" section\
