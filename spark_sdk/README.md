@@ -86,21 +86,23 @@ You can add this code to didFinishLaunchingWithOptions method of UIAppDelegate p
 ```swift
 // Swift example
 api.register(forNotifications: [.alert, .sound], usingRemoteNotifications: true) { (error) in
-     print("notification registration result:", error != nil ? error! : "success")
+     if (error)
+         print("registering for notifications failed: error=", error!)
 }
 ```
 
 **2. Implement didRegisterForRemoteNotificationsWithDeviceToken delegate method (remote notifications only)**
 ```objc
 // Objective-C example
-- (BOOL) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+- (BOOL)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     // provide your remote notification server with deviceToken to communicate to this app
 }
 ```
 ```swift
 // Swift example
-func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data)
+{
     // provide your remote notification server with deviceToken to communicate to this app
 }
 ```
