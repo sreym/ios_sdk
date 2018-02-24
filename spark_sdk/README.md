@@ -119,6 +119,7 @@ Spark will automatically download a preview for your video from our servers and 
     withBeforeSendBlock:^(UNMutableNotificationContent *content){
         // use this block to customize the notification payload before sending it out to the notification center
         content.sound = [UNNotificationSound soundNamed:@"custom_sound.aiff"];
+        return YES;
     }
     withCompletionBlock:^(NSError *error){
         if (error)
