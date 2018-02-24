@@ -8,19 +8,19 @@ Spark SDK enables native support of Spark video features in your iOS apps.
 - Using [CocoaPods](https://cocoapods.org):
 Add the following line to your Podfile:
 ```
-pod 'HolaSpark', '~> 0.0'
+pod 'HolaSpark', '~> 1.0'
 ```
 
 - Manual installation:
 
--- Copy **libspark_sdk.a** and **spark_api.h** to your project's folder, e.g.:
+-- Copy **libspark_sdk.a** and **SparkAPI.h** to your project's folder, e.g.:
 ```
 <myapproot>
   <myapp>
   <myapp>.xcodeproj
   spark_sdk
     libspark_sdk.a
-    spark_api.h
+    SparkAPI.h
 ```
 -- Add the new folder to XCode project\
 -- Open your app configuration settings\
@@ -32,9 +32,9 @@ pod 'HolaSpark', '~> 0.0'
 Initialize Spark SDK with your customer id:
 ```objc
 // Objective-C example
-- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)options
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)options
 {
-    SparkAPI *api = [SparkAPI getSparkAPI:@"<customer_id>"];
+    SparkAPI *api = [SparkAPI getAPI:@"<customer_id>"];
     ...
 }
 ```
@@ -42,7 +42,7 @@ Initialize Spark SDK with your customer id:
 // Swift example
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
 {
-    let api = SparkAPI.getSparkAPI("<customer_id>")
+    let api = SparkAPI.getAPI("<customer_id>")
     ...
 }
 ```
@@ -52,7 +52,7 @@ NOTE: providing customer id is required only for the first provisioning call, in
 // Objective-C example
 - (IBAction)onSomeButtonClicked:(UIButton *)sender
 {
-    SparkAPI *api = [SparkAPI getSparkAPI:nil];
+    SparkAPI *api = [SparkAPI getAPI:nil];
     ...
 }
 ```
@@ -60,7 +60,7 @@ NOTE: providing customer id is required only for the first provisioning call, in
 // Swift example
 @IBAction func onSomeButtonClicked(sender: UIButton){
 {
-    let api = SparkAPI.getSparkAPI(nil);
+    let api = SparkAPI.getAPI(nil);
     ...
 }
 ```
@@ -187,7 +187,7 @@ Follow these steps to add NotificationServiceExtension to your project:
 // Objective-C example
 
 // NotificationService.h
-#import "spark_api.h"
+#import <SparkAPI.h>
 @interface NotificationService: SparkPreviewNotificationService
 @end
 
@@ -224,7 +224,7 @@ XCode will add a new folder to your project with NotificationViewController clas
 // Objective-C example
 
 // NotificationViewController.h
-#import "spark_api.h"
+#import <SparkAPI.h>
 @interface NotificationViewController: SparkPreviewNotificationViewController
 @end
 
@@ -238,10 +238,12 @@ XCode will add a new folder to your project with NotificationViewController clas
 TODO
 ```
 
-- Configure your extension properties with corresponding category (it is basically a route that defines which notifications to apply it to) and original content size ratio (notification size gets resized automatically based on video ratio, but we assume 16:9 to avoid redundant transformation on initial show).
+- Configure your extension properties with the following properties:
 Goto Info.plist > NSExtension > NSExtensionAttributes and change its attributes according to:\
--- UNNotificationExtensionCategory = "spark-preview"\
--- UNNotificationExtensionInitialContentSizeRadio = 0.5625
+**-- UNNotificationExtensionCategory = "spark-preview"**\
+it is basically a route that defines which notifications should this extension be applied to)\
+**-- UNNotificationExtensionInitialContentSizeRadio = 0.5625**\
+notification size gets resized automatically based on video ratio, but we assume 16:9 to avoid redundant transformation on initial show
 
 - Link NotificationContentExtension target against Spark library\
 Using CocoaPods:\
