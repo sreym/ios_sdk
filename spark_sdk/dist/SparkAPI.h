@@ -26,7 +26,7 @@
 // argument.
 //     @param customerId - id used during customer registration on
 //         Spark Control Panel (https://holaspark.com/cp)
-+ (SparkAPI *)getSparkAPI:(NSString *)customerId;
++ (SparkAPI *)getAPI:(NSString *)customerId;
 
 // Register your application within notification system. Call this method once
 // in didFinishLaunchingWithOptions implementation of UIApplicationDelegate
@@ -52,7 +52,7 @@
 //     @param withTitle - UNMutableNotificationContent.title
 //     @param withSubtitle (optional) - UNMutableNotificationContent.subtitle
 //     @param withBody - UNMutableNotificationContent.body
-//     @param withTrigger - trigger that defines the moment of time when to
+//     @param withTriggerOn - trigger that defines the moment of time when to
 //         show this notification to the user, e.g. can be one of:
 //         - UNTimeIntervalNotificationTrigger
 //         - UNCalendarNotificationTrigger
@@ -72,7 +72,7 @@
     withTitle:(NSString *)title
     withSubtitle:(NSString *)subtitle
     withBody:(NSString *)body
-    withTrigger:(UNNotificationTrigger *)trigger
+    withTriggerOn:(UNNotificationTrigger *)trigger
     withBeforeSendBlock: (BOOL (^)(UNMutableNotificationContent *))onbeforesend
     withCompletionBlock: (void (^)(NSError *))ondone;
 
