@@ -115,7 +115,7 @@ Spark will automatically download a preview for your video from our servers and 
 [api sendPreviewNotification: [NSURL URLWithString:@"https://yourcdn.com/path_to_video/video.m3u8"]
     withTitle:@"Watch!" withSubtitle:nil
     withBody:@"Dani Alves gets kicked out after shouting at referee in PSG defeat at Lyon"
-    withTrigger:[UNTimeIntervalNotificationTrigger triggerWithTimeInterval:10 repeats:false]
+    withTriggerOn:[UNTimeIntervalNotificationTrigger triggerWithTimeInterval:10 repeats:false]
     withBeforeSendBlock:^(UNMutableNotificationContent *content){
         // use this block to customize the notification payload before sending it out to the notification center
         content.sound = [UNNotificationSound soundNamed:@"custom_sound.aiff"];
