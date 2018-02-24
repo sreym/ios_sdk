@@ -129,7 +129,8 @@ Spark will automatically download a preview for your video from our servers and 
 ```swift
 // Swift example
 api.sendPreviewNotification(URL(string: "https://yourcdn.com/path_to_video/video.m3u8"),
-    withTitle: "Watch", withSubtitle: nil, withBody: "Body",
+    withTitle: "Watch!", withSubtitle: nil,
+    withBody: "Dani Alves gets kicked out after shouting at referee in PSG defeat at Lyon",
     withTriggerOn: UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false),
     withBeforeSend: { (content) -> Bool in
         // use this block to customize the notification payload before sending it out to the notification center
