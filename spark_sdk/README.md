@@ -4,11 +4,12 @@ The Spark feature library is a toolset for enriching and enhancing the user exep
 
 The library also includes:
 - VPAID addon 
-- [External APIs](https://docs.google.com/document/d/1Rh8TWTDyBdkLnnr4RVnRNZ1bSltT5NIn5dcNpdxxdQE/edit#heading=h.uo3s9j23kuim) for control & customization of all features
-- Tools for generation [rich notifications](https://docs.google.com/document/d/1Rh8TWTDyBdkLnnr4RVnRNZ1bSltT5NIn5dcNpdxxdQE/#heading=h.6i9oua7b4xma) with video previews 
+- [Control Panel](https://holaspark.com/?need_login=1) configuration of all features
+- [External APIs](https://docs.google.com/document/d/1Rh8TWTDyBdkLnnr4RVnRNZ1bSltT5NIn5dcNpdxxdQE/edit#heading=h.uo3s9j23kuim) for manual feature control
+- Tools for generating [Rich Notifications](https://docs.google.com/document/d/1Rh8TWTDyBdkLnnr4RVnRNZ1bSltT5NIn5dcNpdxxdQE/#heading=h.6i9oua7b4xma) with video previews 
 
 **Requirements**
-- Registering with [Spark](https://holaspark.com) to receive a customer id that will be used to activate the library
+- [Registering with Spark](https://holaspark.com) to receive a customer id that will be used to activate the library
 
 Note: An [Android version](https://github.com/hola/spark_android_sdk) is also available.
 
