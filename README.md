@@ -1,10 +1,16 @@
-# Hola Spark
-Hola Spark is a set of tools that enriches the video experience of your users with excitement and fun.
-This repository offers Spark integration for your mobile iOS apps.
+# Spark iOS SDK
 
-Check out [our site](https://holaspark.com) for more details about Spark product.
+This document describes integration of a native iOS app with Spark player and feature library.
 
-# Documentation
-Choose the category for product details:
-- [Spark Player](spark_player/README.md)
-- [Spark SDK](spark_sdk/README.md)
+The SDK has two parts
+
+- [Spark Player](https://github.com/hola/spark_ios_sdk/blob/master/spark_player):
+  A full featured player based on Android ExoPlayer that can be integrated as is without requiring a Spark customer id.
+
+- [Spark Feature Library](https://github.com/hola/spark_ios_sdk/blob/master/spark_sdk):
+The Spark feature library is a rich toolset for enriching and enhancing the user exeprience of your native apps with features like Video previews, floating player, watch next suggestions, etc - see the [Full available feature set](https://holaspark.com) 
+
+Note: An [Android version](https://github.com/hola/spark_android_sdk) is also available.
+
+If you have any questions, email us at support@holaspark.com
+
