@@ -7,12 +7,12 @@ Pod::Spec.new do |s|
   s.homepage              = 'https://holaspark.com'
   s.license               = { :type => 'holaspark.com' }
   s.author                = 'holaspark.com'
-  s.source                = { :git => 'https://github.com/hola/spark_ios_sdk.git', :tag => 'spark-sdk-v'+s.version.to_s }
+  s.source                = { :git => 'https://github.com/hola/spark_ios_sdk.git', :tag => 'v1.85.12' }
 
   s.ios.deployment_target = '10.0'
 
   s.source_files          = 'lib/dist/SparkAPI.h'
   s.public_header_files   = 'lib/dist/SparkAPI.h'
   s.vendored_libraries    = 'lib/dist/libspark_sdk.a'
-  s.libraries             = 'lib'
+  s.libraries             = 'spark_sdk'
 end
