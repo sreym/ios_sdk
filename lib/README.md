@@ -1,12 +1,12 @@
 # Spark Feature Library
 
-The Spark feature library is a toolset for enriching and enhancing the user exeprience of your native apps with features like Video previews, floating player, watch next suggestions, etc - see the [Full available feature set](https://holaspark.com) 
+The Spark feature library is a toolset for enriching and enhancing the user exeprience of your native apps with features like Video previews, floating player, watch next suggestions, etc - see the [Full available feature set](https://holaspark.com)
 
 The library also includes:
-- VPAID addon 
+- VPAID addon
 - [Control Panel](https://holaspark.com/?need_login=1) configuration of all features
 - [External APIs](https://docs.google.com/document/d/1Rh8TWTDyBdkLnnr4RVnRNZ1bSltT5NIn5dcNpdxxdQE/edit#heading=h.uo3s9j23kuim) for manual feature control
-- Tools for generating [Rich Notifications](https://docs.google.com/document/d/1Rh8TWTDyBdkLnnr4RVnRNZ1bSltT5NIn5dcNpdxxdQE/#heading=h.6i9oua7b4xma) with video previews 
+- Tools for generating [Rich Notifications](https://docs.google.com/document/d/1Rh8TWTDyBdkLnnr4RVnRNZ1bSltT5NIn5dcNpdxxdQE/#heading=h.6i9oua7b4xma) with video previews
 
 **Requirements**
 - [Registering with Spark](https://holaspark.com) to receive a customer id that will be used to activate the library
@@ -17,7 +17,7 @@ Note: An [Android version](https://github.com/hola/spark_android_sdk) is also av
 - Using [CocoaPods](https://cocoapods.org):
 Add the following line to your Podfile:
 ```
-pod 'HolaSpark', '~> 1.0'
+pod 'SparkLib', '~> 1.0'
 ```
 
 - Manual installation:
