@@ -73,7 +73,8 @@
     withSubtitle:(NSString *)subtitle
     withBody:(NSString *)body
     withTriggerOn:(UNNotificationTrigger *)trigger
-    withBeforeSendBlock: (BOOL (^)(UNMutableNotificationContent *))onbeforesend
+    withBeforeSendBlock: (BOOL (^)(UNMutableNotificationContent *,
+        UNNotificationSettings *))onbeforesend
     withCompletionBlock: (void (^)(NSError *))ondone;
 
 @end
