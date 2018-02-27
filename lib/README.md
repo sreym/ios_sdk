@@ -17,7 +17,7 @@ Note: An [Android version](https://github.com/hola/spark_android_sdk) is also av
 - Using [CocoaPods](https://cocoapods.org):
 Add the following line to your Podfile:
 ```
-pod 'SparkLib', '~> 1.0'
+pod 'SparkLib', '~> 1.1'
 ```
 
 - Manual installation:
