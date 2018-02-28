@@ -11,10 +11,12 @@
 
 // Preview-enabled customized view controller.
 // Inherit this class in your NotificationContentExtension.
+__IOS_AVAILABLE(10.0) __TVOS_PROHIBITED __WATCHOS_PROHIBITED
 @interface SparkPreviewNotificationViewController : UIViewController
 @end
 // Remote notification handler class (remote notifications only).
 // Inherit this class in your NotificationServiceExtension.
+__IOS_AVAILABLE(10.0) __TVOS_PROHIBITED __WATCHOS_PROHIBITED
 @interface SparkPreviewNotificationService : UNNotificationServiceExtension
 @end
 
@@ -42,7 +44,8 @@
 //         error object if operation failed.
 - (void)registerForNotifications:(UNAuthorizationOptions)options
     usingRemoteNotifications:(BOOL)remote
-    withCompletionBlock:(void (^_Nonnull)(NSError *_Nullable))ondone;
+    withCompletionBlock:(void (^_Nonnull)(NSError *_Nullable))ondone
+    __IOS_AVAILABLE(10.0) __TVOS_PROHIBITED __WATCHOS_PROHIBITED;
 
 // Send local notification with preview for provided video url to the
 // notification center.
@@ -75,6 +78,7 @@
     withBeforeSendBlock: (BOOL (^_Nullable)(
         UNMutableNotificationContent *_Nonnull,
         UNNotificationSettings *_Nonnull))onbeforesend
-    withCompletionBlock: (void (^_Nullable)(NSError *_Nullable))ondone;
+    withCompletionBlock: (void (^_Nullable)(NSError *_Nullable))ondone
+    __IOS_AVAILABLE(10.0) __TVOS_PROHIBITED __WATCHOS_PROHIBITED;
 
 @end
