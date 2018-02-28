@@ -1,8 +1,7 @@
 //
-//  spark_api.h
 //  spark-ios-sdk
 //
-//  Created by volodymyr on 16/02/2018.
+//  Created by spark on 16/02/2018.
 //  Copyright © 2018 Hola. All rights reserved.
 //
 
@@ -26,7 +25,7 @@
 // argument.
 //     @param customerId - id used during customer registration on
 //         Spark Control Panel (https://holaspark.com/cp)
-+ (SparkAPI *)getAPI:(NSString *)customerId;
++ (SparkAPI *_Nonnull)getAPI:(NSString *_Nullable)customerId;
 
 // Register your application within notification system. Call this method once
 // in didFinishLaunchingWithOptions implementation of UIApplicationDelegate
@@ -43,7 +42,7 @@
 //         error object if operation failed.
 - (void)registerForNotifications:(UNAuthorizationOptions)options
     usingRemoteNotifications:(BOOL)remote
-    withCompletionBlock:(void (^)(NSError *error))ondone;
+    withCompletionBlock:(void (^_Nonnull)(NSError *_Nullable))ondone;
 
 // Send local notification with preview for provided video url to the
 // notification center.
@@ -68,13 +67,14 @@
 //         the status of operation, NSError object will indicate the reason of
 //         a failure (preview loading failed, notification unable to schedule
 //         etc) or "nil" in case of the success.
-- (void)sendPreviewNotification:(NSURL *)forVideoUrl
-    withTitle:(NSString *)title
-    withSubtitle:(NSString *)subtitle
-    withBody:(NSString *)body
-    withTriggerOn:(UNNotificationTrigger *)trigger
-    withBeforeSendBlock: (BOOL (^)(UNMutableNotificationContent *,
-        UNNotificationSettings *))onbeforesend
-    withCompletionBlock: (void (^)(NSError *))ondone;
+- (void)sendPreviewNotification:(NSURL *_Nonnull)forVideoUrl
+    withTitle:(NSString *_Nonnull)title
+    withSubtitle:(NSString *_Nullable)subtitle
+    withBody:(NSString *_Nonnull)body
+    withTriggerOn:(UNNotificationTrigger *_Nonnull)trigger
+    withBeforeSendBlock: (BOOL (^_Nullable)(
+        UNMutableNotificationContent *_Nonnull,
+        UNNotificationSettings *_Nonnull))onbeforesend
+    withCompletionBlock: (void (^_Nullable)(NSError *_Nullable))ondone;
 
 @end
