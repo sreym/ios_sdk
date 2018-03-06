@@ -9,6 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <UserNotifications/UserNotifications.h>
 
+typedef NS_ENUM(int, SparkLogLevel) {
+    SparkLogLevelDebug = 0,
+    SparkLogLevelInfo,
+    SparkLogLevelWarning,
+    SparkLogLevelError,
+    SparkLogLevelCritical
+};
+
 // Preview-enabled customized view controller.
 // Inherit this class in your NotificationContentExtension.
 __IOS_AVAILABLE(10.0) __TVOS_PROHIBITED __WATCHOS_PROHIBITED
@@ -28,6 +36,10 @@ __IOS_AVAILABLE(10.0) __TVOS_PROHIBITED __WATCHOS_PROHIBITED
 //     @param customerId - id used during customer registration on
 //         Spark Control Panel (https://holaspark.com/cp)
 + (SparkAPI *_Nonnull)getAPI:(NSString *_Nullable)customerId;
+
+// Configures verbosity logging level (SparkLogLevelError by default).
+//     @param level - defines sdk logs >=level to be printed to app console
+- (void)setLogLevel:(SparkLogLevel)level;
 
 // Register your application within notification system. Call this method once
 // in didFinishLaunchingWithOptions implementation of UIApplicationDelegate
