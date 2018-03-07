@@ -93,4 +93,7 @@ __IOS_AVAILABLE(10.0) __TVOS_PROHIBITED __WATCHOS_PROHIBITED
     withCompletionBlock: (void (^_Nullable)(NSError *_Nullable))ondone
     __IOS_AVAILABLE(10.0) __TVOS_PROHIBITED __WATCHOS_PROHIBITED;
 
+// Finalize spark and release resources.
+- (void)uninit;
+
 @end
