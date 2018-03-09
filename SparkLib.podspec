@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
   s.name                  = 'SparkLib'
-  s.version               = '1.1.5'
+  s.version               = '1.1.6'
   s.summary               = 'SparkLib integration SDK'
   s.description           = 'Integrate favorite SparkLib features in your iOS apps'
 
   s.homepage              = 'https://holaspark.com'
   s.license               = { :type => 'holaspark.com' }
   s.author                = 'holaspark.com'
-  s.source                = { :git => 'https://github.com/hola/spark_ios_sdk.git', :tag => 'v1.86.774' }
+  s.source                = { :git => 'https://github.com/hola/spark_ios_sdk.git', :tag => 'v1.86.825' }
 
   s.ios.deployment_target = '8.0'
 

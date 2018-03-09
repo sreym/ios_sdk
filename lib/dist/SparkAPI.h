@@ -17,6 +17,16 @@ typedef NS_ENUM(int, SparkLogLevel) {
     SparkLogLevelCritical
 };
 
+// Video info class
+@interface SparkVideoItem : NSObject
+@property NSURL *_Nonnull url;
+@property NSString *_Nullable title;
+@property NSString *_Nullable desc;
+@property NSURL *_Nullable poster;
+@property NSURL *_Nullable videoPoster;
+@property NSDecimalNumber *_Nullable duration;
+@end
+
 // Preview-enabled customized view controller.
 // Inherit this class in your NotificationContentExtension.
 __IOS_AVAILABLE(10.0) __TVOS_PROHIBITED __WATCHOS_PROHIBITED
@@ -87,11 +97,25 @@ __IOS_AVAILABLE(10.0) __TVOS_PROHIBITED __WATCHOS_PROHIBITED
     withSubtitle:(NSString *_Nullable)subtitle
     withBody:(NSString *_Nonnull)body
     withTriggerOn:(UNNotificationTrigger *_Nonnull)trigger
-    withBeforeSendBlock: (BOOL (^_Nullable)(
+    withBeforeSendBlock:(BOOL (^_Nullable)(
         UNMutableNotificationContent *_Nonnull,
         UNNotificationSettings *_Nonnull))onbeforesend
     withCompletionBlock: (void (^_Nullable)(NSError *_Nullable))ondone
     __IOS_AVAILABLE(10.0) __TVOS_PROHIBITED __WATCHOS_PROHIBITED;
+
+// Retrieve the list of the most popular videos over defined time period.
+//     @param hits - number of videos to retrieve (basically a length of
+//         video array in completion block)
+//     @param overLast - defines a period for which to generate a playlist.
+//         possible input: any time format ("15m", "1h", "6h", "24h") or
+//         "new" to retrieve the list of new videos
+//     @param withCompletionBlock - code block that will provide the result
+//         with the list of videos or error in case of operation failure.
+- (NSURLSessionDataTask *_Nonnull)getPlaylistVideos:(NSUInteger)hits
+    overLast:(NSString *_Nonnull)period
+    withCompletionBlock:(void (^_Nonnull)(
+        NSArray<SparkVideoItem *> *_Nullable,
+        NSError *_Nullable))ondone;
 
 // Finalize spark and release resources.
 - (void)uninit;
