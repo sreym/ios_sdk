@@ -106,18 +106,21 @@ __IOS_AVAILABLE(10.0) __TVOS_PROHIBITED __WATCHOS_PROHIBITED
 // Retrieve the list of the most popular videos over defined time period.
 //     @param hits - number of videos to retrieve (basically a length of
 //         video array in completion block)
-//     @param overLast - defines a period for which to generate a playlist.
-//         possible input: any time format ("15m", "1h", "6h", "24h") or
-//         "new" to retrieve the list of new videos
+//     @param overLast - array of periods to retrieve the playlist for.
+//         possible input: multiples of "1h", "6h", "1d", "1w", "1m" or
+//         "new" to retrieve the list of recently added videos.
+//         examples:
+//         @[@"3h"] - popular videos over the last 3 hours
+//         @[@"1d", @"1w"] - popular videos over the last day and the last week
 //     @param withCompletionBlock - code block that will provide the result
 //         with the list of videos or error in case of operation failure.
-- (NSURLSessionDataTask *_Nonnull)getPlaylistVideos:(NSUInteger)hits
-    overLast:(NSString *_Nonnull)period
+- (NSURLSessionDataTask *_Nonnull)getPopularVideos:(NSUInteger)hits
+    overLast:(NSArray<NSString *> *_Nonnull)periods
     withCompletionBlock:(void (^_Nonnull)(
-        NSArray<SparkVideoItem *> *_Nullable,
+        NSDictionary<NSString *, NSArray<SparkVideoItem *> *> *_Nullable,
         NSError *_Nullable))ondone;
 
 // Finalize spark and release resources.
-- (void)uninit;
++ (void)finalize;
 
 @end
