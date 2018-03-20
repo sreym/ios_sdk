@@ -1,0 +1,6 @@
+framework module SparkLib {
+  umbrella header "SparkLib.h"
+
+  export *
+  module * { export * }
+}
