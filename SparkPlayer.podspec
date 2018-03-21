@@ -18,6 +18,7 @@ Spark video player.
   s.source           = { :git => 'https://github.com/hola/spark_ios_sdk.git', :tag => 'v1.88.311' }
 
   s.ios.deployment_target = '10.0'
+  s.swift_version = '4.0'
 
   s.source_files          = 'player/SparkPlayer/Classes/**/*.{swift,h,m}'
 
