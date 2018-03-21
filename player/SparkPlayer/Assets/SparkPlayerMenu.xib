@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SparkPlayerMenuViewController" customModule="SparkPlayer" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="Gz5-qJ-vH8" id="YWP-iF-vfb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view opaque="NO" contentMode="scaleToFill" id="iN0-l3-epB" customClass="SparkPlayerMenu" customModule="SparkPlayer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjX-0N-79A">
+                    <rect key="frame" x="0.0" y="603" width="375" height="64"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuClose" translatesAutoresizingMaskIntoConstraints="NO" id="Kpe-lZ-wDI">
+                            <rect key="frame" x="13" y="20" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="6ri-Xm-D0e"/>
+                                <constraint firstAttribute="width" secondItem="Kpe-lZ-wDI" secondAttribute="height" multiplier="1:1" id="gcs-g0-X17"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tk9-Rb-XKh">
+                            <rect key="frame" x="67" y="8" width="300" height="48"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Tk9-Rb-XKh" firstAttribute="leading" secondItem="Kpe-lZ-wDI" secondAttribute="trailing" constant="30" id="GC0-9P-dah"/>
+                        <constraint firstItem="Kpe-lZ-wDI" firstAttribute="centerY" secondItem="kjX-0N-79A" secondAttribute="centerY" id="OyH-F9-lff"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="Tk9-Rb-XKh" secondAttribute="trailing" id="TOS-aC-SLU"/>
+                        <constraint firstItem="Kpe-lZ-wDI" firstAttribute="leading" secondItem="kjX-0N-79A" secondAttribute="leadingMargin" constant="5" id="Uvp-dY-UYx"/>
+                        <constraint firstItem="Tk9-Rb-XKh" firstAttribute="top" secondItem="kjX-0N-79A" secondAttribute="topMargin" id="hQm-Hq-nzn"/>
+                        <constraint firstAttribute="bottomMargin" secondItem="Tk9-Rb-XKh" secondAttribute="bottom" id="i7u-he-v9U"/>
+                        <constraint firstAttribute="height" constant="64" id="yV8-kO-F8Y"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Gz5-qJ-vH8">
+                    <rect key="frame" x="0.0" y="20" width="375" height="583"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="1aw-Uf-Gnl">
+                        <size key="itemSize" width="50" height="44"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="50" height="50"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="zge-pf-g59"/>
+                        <outlet property="delegate" destination="-1" id="ydV-gs-dZ9"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="kjX-0N-79A" firstAttribute="top" secondItem="Gz5-qJ-vH8" secondAttribute="bottom" id="859-iy-s7M"/>
+                <constraint firstItem="kjX-0N-79A" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Uqm-3h-1yM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="kjX-0N-79A" secondAttribute="bottom" id="fds-iP-a1R"/>
+                <constraint firstItem="Gz5-qJ-vH8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ffn-uf-BYL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Gz5-qJ-vH8" secondAttribute="trailing" id="gIY-qm-9Dg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kjX-0N-79A" secondAttribute="trailing" id="rcS-nU-Qkf"/>
+                <constraint firstItem="Gz5-qJ-vH8" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="zKT-Ng-fv7"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="cancelButton" destination="kjX-0N-79A" id="XhA-1d-m9o"/>
+                <outlet property="cancelIcon" destination="Kpe-lZ-wDI" id="gU5-sE-qK3"/>
+                <outlet property="cancelLabel" destination="Tk9-Rb-XKh" id="Zg6-eb-OxH"/>
+                <outlet property="collectionView" destination="Gz5-qJ-vH8" id="yg7-gQ-lr3"/>
+            </connections>
+            <point key="canvasLocation" x="53.5" y="7.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="MenuClose" width="28" height="28"/>
+    </resources>
+</document>
