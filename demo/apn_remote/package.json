@@ -1,0 +1,15 @@
+{
+  "name": "apn_remote demo",
+  "version": "1.0.0",
+  "description": "Demo app to send remote push notifications to iOS devices",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Spark APN remote demo"
+  "license": "ISC",
+  "dependencies": {
+    "apn": "^2.2.0"
+  }
+}

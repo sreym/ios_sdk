@@ -7,7 +7,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
 #import <UserNotifications/UserNotifications.h>
+#import "spark_api_interface.h"
 
 typedef NS_ENUM(int, SparkLogLevel) {
     SparkLogLevelDebug = 0,
@@ -25,6 +27,26 @@ typedef NS_ENUM(int, SparkLogLevel) {
 @property NSURL *_Nullable poster;
 @property NSURL *_Nullable videoPoster;
 @property NSDecimalNumber *_Nullable duration;
+@end
+
+@class SparkLoader;
+// Protocol for communication with SparkLib js
+@protocol SparkLibJSDelegate
+@property(weak, readonly) SparkLoader* _Nullable loader;
+-(void)on_play;
+-(void)on_pause;
+-(void)on_ended;
+-(void)on_timeupdate:(NSNumber* _Nonnull)pos;
+-(void)on_seeking;
+-(void)on_seeked;
+-(void)on_error;
+-(void)perr:(NSString* _Nonnull)id msg:(NSString* _Nullable)msg;
+@end
+
+// Protocol for communicating with SparkPlayer
+@protocol SparkLibPlayerDelegate
+@optional
+-(id<SparkThumbnailsDelegate> _Nonnull)get_thumbnails_delegate;
 @end
 
 // Preview-enabled customized view controller.
@@ -119,6 +141,14 @@ __IOS_AVAILABLE(10.0) __TVOS_PROHIBITED __WATCHOS_PROHIBITED
     withCompletionBlock:(void (^_Nonnull)(
         NSDictionary<NSString *, NSArray<SparkVideoItem *> *> *_Nullable,
         NSError *_Nullable))ondone;
+
+// Register an AVPlayerItem to work with SparkAPI
+//     @param forItem - AVPlayerItem to register
+- (id<SparkLibJSDelegate> _Nonnull)addPlayerProxy:(AVPlayerItem* _Nonnull)forItem;
+
+// Unregister the AVPlayerItem from SparkAPI
+//     @param forItem - AVPlayerItem to unregister
+- (void)removePlayerProxy:(AVPlayerItem* _Nonnull)forItem;
 
 // Finalize spark and release resources.
 + (void)finalize;

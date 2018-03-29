@@ -1,0 +1,832 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14E5EF10AECCCE520E1F7F89 /* Pods_spark_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152DA6F047EDFBB1D48482A6 /* Pods_spark_demo.framework */; };
+		2D5E0A7C204401C900AEFBBE /* preview_hq.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D5E0A7B204401C800AEFBBE /* preview_hq.mp4 */; };
+		2D5E214D2029DE0B00B0A2C1 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E214C2029DE0B00B0A2C1 /* NotificationService.swift */; };
+		2D5E21512029DE0C00B0A2C1 /* preview-notification-service.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2D5E214A2029DE0B00B0A2C1 /* preview-notification-service.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2D8F3659205902D3009292C2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2D8F3658205902D3009292C2 /* Settings.bundle */; };
+		2DC444D220245CBC0010A70A /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC444D120245CBC0010A70A /* UserNotifications.framework */; };
+		2DC444D420245CBC0010A70A /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC444D320245CBC0010A70A /* UserNotificationsUI.framework */; };
+		2DC444D720245CBC0010A70A /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC444D620245CBC0010A70A /* NotificationViewController.swift */; };
+		2DC444DA20245CBC0010A70A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DC444D820245CBC0010A70A /* MainInterface.storyboard */; };
+		2DC444DE20245CBC0010A70A /* preview-notification-content.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2DC444CF20245CBC0010A70A /* preview-notification-content.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4F644220A83A6F975B0C1797 /* Pods_preview_notification_service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE6CAB29B4838041A1B5B8A /* Pods_preview_notification_service.framework */; };
+		7D9ADF4944FF7C696FFE255D /* Pods_preview_notification_content.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F608781CCC02518CDAA42BD /* Pods_preview_notification_content.framework */; };
+		975887C02047FFB100F6DBD6 /* VideoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975887BF2047FFB100F6DBD6 /* VideoItem.swift */; };
+		97D8739D2047ED2500821325 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D8739C2047ED2500821325 /* StartViewController.swift */; };
+		97D8739F2047F76400821325 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D8739E2047F76400821325 /* VideoTableViewCell.swift */; };
+		97D873A12047F80300821325 /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D873A02047F80300821325 /* VideoListViewController.swift */; };
+		EA309E59201B555E001AD6D2 /* preview.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EA309E58201B552C001AD6D2 /* preview.mp4 */; };
+		EAD788A8201B1D14005A917D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD788A7201B1D14005A917D /* ViewController.swift */; };
+		EADF80A92019D96D007EF10B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADF80A82019D96D007EF10B /* AppDelegate.swift */; };
+		EADF80AE2019D96D007EF10B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADF80AC2019D96D007EF10B /* Main.storyboard */; };
+		EADF80B02019D96D007EF10B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EADF80AF2019D96D007EF10B /* Assets.xcassets */; };
+		EADF80B32019D96D007EF10B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADF80B12019D96D007EF10B /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2D5E214F2029DE0C00B0A2C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EADF809D2019D96D007EF10B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2D5E21492029DE0B00B0A2C1;
+			remoteInfo = "spark-notification-service";
+		};
+		2DC444DC20245CBC0010A70A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EADF809D2019D96D007EF10B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2DC444CE20245CBC0010A70A;
+			remoteInfo = "spark-notification";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2DC444E220245CBC0010A70A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2D5E21512029DE0C00B0A2C1 /* preview-notification-service.appex in Embed App Extensions */,
+				2DC444DE20245CBC0010A70A /* preview-notification-content.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		152DA6F047EDFBB1D48482A6 /* Pods_spark_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spark_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18014C481E44BE42833FB612 /* Pods-preview-notification-content.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-preview-notification-content.release.xcconfig"; path = "Pods/Target Support Files/Pods-preview-notification-content/Pods-preview-notification-content.release.xcconfig"; sourceTree = "<group>"; };
+		2D5C549B20459D670088D3DB /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		2D5E0A7B204401C800AEFBBE /* preview_hq.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = preview_hq.mp4; sourceTree = "<group>"; };
+		2D5E214520299FD800B0A2C1 /* spark-demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "spark-demo.entitlements"; sourceTree = "<group>"; };
+		2D5E214A2029DE0B00B0A2C1 /* preview-notification-service.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "preview-notification-service.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D5E214C2029DE0B00B0A2C1 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		2D5E214E2029DE0C00B0A2C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D8F3658205902D3009292C2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		2DC444CF20245CBC0010A70A /* preview-notification-content.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "preview-notification-content.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DC444D120245CBC0010A70A /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		2DC444D320245CBC0010A70A /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		2DC444D620245CBC0010A70A /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		2DC444D920245CBC0010A70A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		2DC444DB20245CBC0010A70A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F608781CCC02518CDAA42BD /* Pods_preview_notification_content.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_preview_notification_content.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A4810C11F363F4C56EFC2E5 /* Pods-preview-notification-service.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-preview-notification-service.release.xcconfig"; path = "Pods/Target Support Files/Pods-preview-notification-service/Pods-preview-notification-service.release.xcconfig"; sourceTree = "<group>"; };
+		7FFB6E4685CAE5E3BCBA9FF4 /* Pods-spark-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spark-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-spark-demo/Pods-spark-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		975887BF2047FFB100F6DBD6 /* VideoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoItem.swift; sourceTree = "<group>"; };
+		97D8739C2047ED2500821325 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		97D8739E2047F76400821325 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		97D873A02047F80300821325 /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
+		BAE372F741AE2B08A852E22B /* Pods-spark-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spark-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-spark-demo/Pods-spark-demo.release.xcconfig"; sourceTree = "<group>"; };
+		BBE6CAB29B4838041A1B5B8A /* Pods_preview_notification_service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_preview_notification_service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA309E58201B552C001AD6D2 /* preview.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = preview.mp4; sourceTree = "<group>"; };
+		EAD788A7201B1D14005A917D /* ViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; path = ViewController.swift; sourceTree = "<group>"; };
+		EADF80A52019D96D007EF10B /* spark-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "spark-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EADF80A82019D96D007EF10B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EADF80AD2019D96D007EF10B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EADF80AF2019D96D007EF10B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EADF80B22019D96D007EF10B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EADF80B42019D96D007EF10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F389BB5D91F6491BB80D99DD /* Pods-preview-notification-service.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-preview-notification-service.debug.xcconfig"; path = "Pods/Target Support Files/Pods-preview-notification-service/Pods-preview-notification-service.debug.xcconfig"; sourceTree = "<group>"; };
+		FA8A40F918E29DD0CF4DE4E8 /* Pods-preview-notification-content.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-preview-notification-content.debug.xcconfig"; path = "Pods/Target Support Files/Pods-preview-notification-content/Pods-preview-notification-content.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2D5E21472029DE0B00B0A2C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F644220A83A6F975B0C1797 /* Pods_preview_notification_service.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DC444CC20245CBC0010A70A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DC444D420245CBC0010A70A /* UserNotificationsUI.framework in Frameworks */,
+				2DC444D220245CBC0010A70A /* UserNotifications.framework in Frameworks */,
+				7D9ADF4944FF7C696FFE255D /* Pods_preview_notification_content.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EADF80A22019D96D007EF10B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14E5EF10AECCCE520E1F7F89 /* Pods_spark_demo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D5E214B2029DE0B00B0A2C1 /* preview-notification-service */ = {
+			isa = PBXGroup;
+			children = (
+				2D5E214C2029DE0B00B0A2C1 /* NotificationService.swift */,
+				2D5E214E2029DE0C00B0A2C1 /* Info.plist */,
+			);
+			path = "preview-notification-service";
+			sourceTree = "<group>";
+		};
+		2DC444D020245CBC0010A70A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2DC444D120245CBC0010A70A /* UserNotifications.framework */,
+				2DC444D320245CBC0010A70A /* UserNotificationsUI.framework */,
+				4F608781CCC02518CDAA42BD /* Pods_preview_notification_content.framework */,
+				BBE6CAB29B4838041A1B5B8A /* Pods_preview_notification_service.framework */,
+				152DA6F047EDFBB1D48482A6 /* Pods_spark_demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2DC444D520245CBC0010A70A /* preview-notification-content */ = {
+			isa = PBXGroup;
+			children = (
+				2DC444D620245CBC0010A70A /* NotificationViewController.swift */,
+				2DC444D820245CBC0010A70A /* MainInterface.storyboard */,
+				2DC444DB20245CBC0010A70A /* Info.plist */,
+			);
+			path = "preview-notification-content";
+			sourceTree = "<group>";
+		};
+		6D78FE08612776CFC4D631AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA8A40F918E29DD0CF4DE4E8 /* Pods-preview-notification-content.debug.xcconfig */,
+				18014C481E44BE42833FB612 /* Pods-preview-notification-content.release.xcconfig */,
+				F389BB5D91F6491BB80D99DD /* Pods-preview-notification-service.debug.xcconfig */,
+				5A4810C11F363F4C56EFC2E5 /* Pods-preview-notification-service.release.xcconfig */,
+				7FFB6E4685CAE5E3BCBA9FF4 /* Pods-spark-demo.debug.xcconfig */,
+				BAE372F741AE2B08A852E22B /* Pods-spark-demo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EA309E57201B551F001AD6D2 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				2D5E0A7B204401C800AEFBBE /* preview_hq.mp4 */,
+				EA309E58201B552C001AD6D2 /* preview.mp4 */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		EADF809C2019D96D007EF10B = {
+			isa = PBXGroup;
+			children = (
+				EA309E57201B551F001AD6D2 /* resources */,
+				EADF80A72019D96D007EF10B /* spark-demo */,
+				2DC444D520245CBC0010A70A /* preview-notification-content */,
+				2D5E214B2029DE0B00B0A2C1 /* preview-notification-service */,
+				2DC444D020245CBC0010A70A /* Frameworks */,
+				EADF80A62019D96D007EF10B /* Products */,
+				6D78FE08612776CFC4D631AD /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		EADF80A62019D96D007EF10B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EADF80A52019D96D007EF10B /* spark-demo.app */,
+				2DC444CF20245CBC0010A70A /* preview-notification-content.appex */,
+				2D5E214A2029DE0B00B0A2C1 /* preview-notification-service.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EADF80A72019D96D007EF10B /* spark-demo */ = {
+			isa = PBXGroup;
+			children = (
+				2D8F3658205902D3009292C2 /* Settings.bundle */,
+				2D5E214520299FD800B0A2C1 /* spark-demo.entitlements */,
+				EAD788A7201B1D14005A917D /* ViewController.swift */,
+				EADF80A82019D96D007EF10B /* AppDelegate.swift */,
+				EADF80AC2019D96D007EF10B /* Main.storyboard */,
+				EADF80AF2019D96D007EF10B /* Assets.xcassets */,
+				EADF80B12019D96D007EF10B /* LaunchScreen.storyboard */,
+				EADF80B42019D96D007EF10B /* Info.plist */,
+				2D5C549B20459D670088D3DB /* BridgingHeader.h */,
+				97D8739C2047ED2500821325 /* StartViewController.swift */,
+				97D8739E2047F76400821325 /* VideoTableViewCell.swift */,
+				97D873A02047F80300821325 /* VideoListViewController.swift */,
+				975887BF2047FFB100F6DBD6 /* VideoItem.swift */,
+			);
+			path = "spark-demo";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2D5E21492029DE0B00B0A2C1 /* preview-notification-service */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D5E21522029DE0C00B0A2C1 /* Build configuration list for PBXNativeTarget "preview-notification-service" */;
+			buildPhases = (
+				85CB0E158589F6A9F34740E7 /* [CP] Check Pods Manifest.lock */,
+				2D5E21462029DE0B00B0A2C1 /* Sources */,
+				2D5E21472029DE0B00B0A2C1 /* Frameworks */,
+				2D5E21482029DE0B00B0A2C1 /* Resources */,
+				68CBBBA40049DF234890909A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "preview-notification-service";
+			productName = "spark-notification-service";
+			productReference = 2D5E214A2029DE0B00B0A2C1 /* preview-notification-service.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		2DC444CE20245CBC0010A70A /* preview-notification-content */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DC444E120245CBC0010A70A /* Build configuration list for PBXNativeTarget "preview-notification-content" */;
+			buildPhases = (
+				8339CDCB4778890C79E86180 /* [CP] Check Pods Manifest.lock */,
+				2DC444CB20245CBC0010A70A /* Sources */,
+				2DC444CC20245CBC0010A70A /* Frameworks */,
+				2DC444CD20245CBC0010A70A /* Resources */,
+				3A99734C8E81AEFB5395FB3C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "preview-notification-content";
+			productName = "spark-notification";
+			productReference = 2DC444CF20245CBC0010A70A /* preview-notification-content.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		EADF80A42019D96D007EF10B /* spark-demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EADF80CD2019D96D007EF10B /* Build configuration list for PBXNativeTarget "spark-demo" */;
+			buildPhases = (
+				A2411A923BED5AA9C06B663A /* [CP] Check Pods Manifest.lock */,
+				EADF80A12019D96D007EF10B /* Sources */,
+				EADF80A22019D96D007EF10B /* Frameworks */,
+				EADF80A32019D96D007EF10B /* Resources */,
+				2DC444E220245CBC0010A70A /* Embed App Extensions */,
+				6583C75B5687750686F88F63 /* [CP] Embed Pods Frameworks */,
+				5B5DC007E9BFED29516E1218 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2DC444DD20245CBC0010A70A /* PBXTargetDependency */,
+				2D5E21502029DE0C00B0A2C1 /* PBXTargetDependency */,
+			);
+			name = "spark-demo";
+			productName = demo;
+			productReference = EADF80A52019D96D007EF10B /* spark-demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EADF809D2019D96D007EF10B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = holaspark;
+				TargetAttributes = {
+					2D5E21492029DE0B00B0A2C1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					2DC444CE20245CBC0010A70A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					EADF80A42019D96D007EF10B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = EADF80A02019D96D007EF10B /* Build configuration list for PBXProject "spark-demo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EADF809C2019D96D007EF10B;
+			productRefGroup = EADF80A62019D96D007EF10B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EADF80A42019D96D007EF10B /* spark-demo */,
+				2DC444CE20245CBC0010A70A /* preview-notification-content */,
+				2D5E21492029DE0B00B0A2C1 /* preview-notification-service */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2D5E21482029DE0B00B0A2C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DC444CD20245CBC0010A70A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DC444DA20245CBC0010A70A /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EADF80A32019D96D007EF10B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA309E59201B555E001AD6D2 /* preview.mp4 in Resources */,
+				EADF80B32019D96D007EF10B /* LaunchScreen.storyboard in Resources */,
+				EADF80B02019D96D007EF10B /* Assets.xcassets in Resources */,
+				2D5E0A7C204401C900AEFBBE /* preview_hq.mp4 in Resources */,
+				2D8F3659205902D3009292C2 /* Settings.bundle in Resources */,
+				EADF80AE2019D96D007EF10B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A99734C8E81AEFB5395FB3C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-preview-notification-content/Pods-preview-notification-content-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B5DC007E9BFED29516E1218 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-spark-demo/Pods-spark-demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6583C75B5687750686F88F63 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-spark-demo/Pods-spark-demo-frameworks.sh",
+				"${PODS_ROOT}/../../../lib/dist/SparkLib.framework",
+				"${BUILT_PRODUCTS_DIR}/SparkPlayer/SparkPlayer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SparkLib.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SparkPlayer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-spark-demo/Pods-spark-demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68CBBBA40049DF234890909A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-preview-notification-service/Pods-preview-notification-service-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8339CDCB4778890C79E86180 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-preview-notification-content-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85CB0E158589F6A9F34740E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-preview-notification-service-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2411A923BED5AA9C06B663A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-spark-demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2D5E21462029DE0B00B0A2C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D5E214D2029DE0B00B0A2C1 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DC444CB20245CBC0010A70A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DC444D720245CBC0010A70A /* NotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EADF80A12019D96D007EF10B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				975887C02047FFB100F6DBD6 /* VideoItem.swift in Sources */,
+				EAD788A8201B1D14005A917D /* ViewController.swift in Sources */,
+				97D8739F2047F76400821325 /* VideoTableViewCell.swift in Sources */,
+				97D873A12047F80300821325 /* VideoListViewController.swift in Sources */,
+				EADF80A92019D96D007EF10B /* AppDelegate.swift in Sources */,
+				97D8739D2047ED2500821325 /* StartViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2D5E21502029DE0C00B0A2C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2D5E21492029DE0B00B0A2C1 /* preview-notification-service */;
+			targetProxy = 2D5E214F2029DE0C00B0A2C1 /* PBXContainerItemProxy */;
+		};
+		2DC444DD20245CBC0010A70A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2DC444CE20245CBC0010A70A /* preview-notification-content */;
+			targetProxy = 2DC444DC20245CBC0010A70A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2DC444D820245CBC0010A70A /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2DC444D920245CBC0010A70A /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		EADF80AC2019D96D007EF10B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EADF80AD2019D96D007EF10B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EADF80B12019D96D007EF10B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EADF80B22019D96D007EF10B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2D5E21532029DE0C00B0A2C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F389BB5D91F6491BB80D99DD /* Pods-preview-notification-service.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H266NKJGCY;
+				INFOPLIST_FILE = "preview-notification-service/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.hola.hola-spark-demo2.preview-notification-service";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "spark-demo/BridgingHeader.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2D5E21542029DE0C00B0A2C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A4810C11F363F4C56EFC2E5 /* Pods-preview-notification-service.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H266NKJGCY;
+				INFOPLIST_FILE = "preview-notification-service/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.hola.hola-spark-demo2.preview-notification-service";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "spark-demo/BridgingHeader.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2DC444DF20245CBC0010A70A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA8A40F918E29DD0CF4DE4E8 /* Pods-preview-notification-content.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H266NKJGCY;
+				INFOPLIST_FILE = "preview-notification-content/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.hola.hola-spark-demo2.preview-notification-content";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "spark-demo/BridgingHeader.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2DC444E020245CBC0010A70A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18014C481E44BE42833FB612 /* Pods-preview-notification-content.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H266NKJGCY;
+				INFOPLIST_FILE = "preview-notification-content/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.hola.hola-spark-demo2.preview-notification-content";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "spark-demo/BridgingHeader.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EADF80CB2019D96D007EF10B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EADF80CC2019D96D007EF10B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EADF80CE2019D96D007EF10B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FFB6E4685CAE5E3BCBA9FF4 /* Pods-spark-demo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "spark-demo/spark-demo.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H266NKJGCY;
+				INFOPLIST_FILE = "spark-demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.hola.hola-spark-demo2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "spark-demo/BridgingHeader.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EADF80CF2019D96D007EF10B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAE372F741AE2B08A852E22B /* Pods-spark-demo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "spark-demo/spark-demo.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H266NKJGCY;
+				INFOPLIST_FILE = "spark-demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.hola.hola-spark-demo2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "spark-demo/BridgingHeader.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D5E21522029DE0C00B0A2C1 /* Build configuration list for PBXNativeTarget "preview-notification-service" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D5E21532029DE0C00B0A2C1 /* Debug */,
+				2D5E21542029DE0C00B0A2C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2DC444E120245CBC0010A70A /* Build configuration list for PBXNativeTarget "preview-notification-content" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DC444DF20245CBC0010A70A /* Debug */,
+				2DC444E020245CBC0010A70A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EADF80A02019D96D007EF10B /* Build configuration list for PBXProject "spark-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EADF80CB2019D96D007EF10B /* Debug */,
+				EADF80CC2019D96D007EF10B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EADF80CD2019D96D007EF10B /* Build configuration list for PBXNativeTarget "spark-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EADF80CE2019D96D007EF10B /* Debug */,
+				EADF80CF2019D96D007EF10B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EADF809D2019D96D007EF10B /* Project object */;
+}

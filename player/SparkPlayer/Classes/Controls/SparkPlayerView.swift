@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SparkLib
 
 enum FadeDirection {
     case In
@@ -130,7 +131,11 @@ class SparkPlayerView: UIView {
 }
 
 // Handle Spark features
-extension SparkPlayerView {
+extension SparkPlayerView: SparkThumbnailsDelegate {
+    func get_thumbnail_container() -> UIView! {
+        return thumbnailView
+    }
+
     func updateThumbnail(withImage image: UIImage? = nil) {
         guard !thumbnailView.isHidden else {
             return

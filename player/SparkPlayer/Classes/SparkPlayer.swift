@@ -8,10 +8,6 @@
 import AVKit
 import SparkLib
 
-protocol SparkAPIDelegate {
-    func getThumbnails(completionHandler: (([UIImage]?) -> Void))
-}
-
 protocol SparkPlayerDelegate {
     // controls handlers
     func onPlayClick()
@@ -74,7 +70,11 @@ public class SparkPlayer: UIViewController {
     private var inlineFrame: CGRect?
 
     // Spark handling
-    var sparkAPI: SparkAPI?
+    var sparkAPI: SparkAPI? {
+        return SparkAPI.getAPI(nil)
+    }
+
+    var sparkProxy: SparkLibJSDelegate?
 
     public var player: AVPlayer? {
         willSet {
@@ -170,7 +170,6 @@ public class SparkPlayer: UIViewController {
         }
 
         bindPlayerEvents()
-        currentItem = player.currentItem
     }
 
     func setFullscreen(_ fullscreen: Bool) {
@@ -203,8 +202,12 @@ public class SparkPlayer: UIViewController {
             return
         }
 
-        timeObserverToken = player.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(1, 1), queue: DispatchQueue.main) { (CMTime) -> Void in
+        timeObserverToken = player.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(1, 1), queue: DispatchQueue.main) { (time) -> Void in
             self.activeController.timeupdate()
+            self.sparkProxy?.on_timeupdate(NSNumber(value: time.seconds))
+            if (self.isEnded()) {
+                self.sparkProxy?.on_ended()
+            }
         }
 
         if let item = player.currentItem {
@@ -212,7 +215,7 @@ public class SparkPlayer: UIViewController {
         }
 
         player.addObserver(self, forKeyPath: "rate", options: NSKeyValueObservingOptions.new, context: &SparkPlayer.observerContext)
-        player.addObserver(self, forKeyPath: "playerItem", options: NSKeyValueObservingOptions.new, context: &SparkPlayer.observerContext)
+        player.addObserver(self, forKeyPath: "currentItem", options: NSKeyValueObservingOptions.new, context: &SparkPlayer.observerContext)
     }
 
     func unbindPlayerEvents() {
@@ -227,7 +230,7 @@ public class SparkPlayer: UIViewController {
         }
 
         player.removeObserver(self, forKeyPath: "rate")
-        player.removeObserver(self, forKeyPath: "playerItem")
+        player.removeObserver(self, forKeyPath: "currentItem")
     }
 
     public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -244,7 +247,7 @@ public class SparkPlayer: UIViewController {
                 } else if (paused) {
                     onPlay()
                 }
-            case "playerItem":
+            case "currentItem":
                 if let newItem = player.currentItem {
                     if let _ = newItem.asset as? SparkPlayerHLSAsset {
                         // do not do anything if we're switching to own item
@@ -283,6 +286,7 @@ public class SparkPlayer: UIViewController {
         let sparkItem = AVPlayerItem(asset: sparkAsset)
 
         currentItem = sparkItem
+
         player?.replaceCurrentItem(with: sparkItem)
     }
 
@@ -291,6 +295,10 @@ public class SparkPlayer: UIViewController {
             return
         }
 
+        // XXX alexeym: disabled, work in progress
+        if (false) {
+        sparkProxy = sparkAPI?.addPlayerProxy(item)
+        }
         item.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.new, context: &SparkPlayer.observerContext)
     }
 
@@ -299,6 +307,11 @@ public class SparkPlayer: UIViewController {
             return
         }
 
+        // XXX alexeym: disabled, work in progress
+        if (false) {
+        sparkProxy = nil
+        sparkAPI?.removePlayerProxy(item)
+        }
         item.removeObserver(self, forKeyPath: "status", context: &SparkPlayer.observerContext)
     }
 
@@ -349,11 +362,13 @@ extension SparkPlayer: SparkPlayerDelegate {
 
     func seekTo(_ value: CMTime) {
         seeking = true
+        sparkProxy?.on_seeking()
         player?.seek(to: value, toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero)
     }
 
     func onSeeked() {
         seeking = false
+        sparkProxy?.on_seeked()
     }
 
     func isSeeking() -> Bool {
@@ -407,12 +422,14 @@ extension SparkPlayer: SparkPlayerDelegate {
         paused = false
         activeController.onPlayPause()
         activeController.activateView()
+        sparkProxy?.on_play()
     }
 
     func onPaused() {
         paused = true
         activeController.onPlayPause()
         activeController.activateView()
+        sparkProxy?.on_pause()
     }
 
     func getCurrentURL() -> String? {
@@ -513,6 +530,12 @@ extension SparkPlayer: UIViewControllerTransitioningDelegate {
     }
 
     
+}
+
+extension SparkPlayer: SparkLibPlayerDelegate {
+    /*public func get_thumbnails_delegate() -> SparkThumbnailsDelegate {
+
+    }*/
 }
 
 // public API
