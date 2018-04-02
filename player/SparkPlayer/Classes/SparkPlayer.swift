@@ -49,6 +49,8 @@ public class SparkPlayer: UIViewController {
     }
 
     // player handling
+    private var config: Dictionary<String, Any>!
+    private var plugins = [PluginInterface]()
     private var playerLayer: AVPlayerLayer!
     private var timeObserverToken: Any?
     private var paused = true
@@ -122,8 +124,23 @@ public class SparkPlayer: UIViewController {
         view.addSubview(inlineController.view)
 
         NotificationCenter.default.addObserver(self, selector: #selector(SparkPlayer.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        notifyPlugins(event: "viewReady")
     }
 
+    convenience public init() { self.init(withConfig: nil) }
+    
+    public init(withConfig config: Dictionary<String, Any>?) {
+        super.init(nibName: nil, bundle: nil)
+        self.config = config ?? Dictionary<String, Any>()
+        if let cfg = self.config[GoogimaPlugin.name] as? Dictionary<String, Any> {
+            self.plugins.append(GoogimaPlugin(config: cfg))
+        }
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -292,6 +309,7 @@ public class SparkPlayer: UIViewController {
 
     func bindCurrentItem() {
         guard let item = currentItem else {
+            notifyPlugins(event: "playerItemChange");
             return
         }
 
@@ -300,6 +318,7 @@ public class SparkPlayer: UIViewController {
         sparkProxy = sparkAPI?.addPlayerProxy(item)
         }
         item.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.new, context: &SparkPlayer.observerContext)
+        notifyPlugins(event: "playerItemChange");
     }
 
     func unbindCurrentItem() {
@@ -313,6 +332,20 @@ public class SparkPlayer: UIViewController {
         sparkAPI?.removePlayerProxy(item)
         }
         item.removeObserver(self, forKeyPath: "status", context: &SparkPlayer.observerContext)
+    }
+    
+    func notifyPlugins(event: String!) {
+        self.plugins.forEach { (plugin) in
+            switch (event) {
+            case "viewReady":
+                plugin.onViewReady(controller: self)
+                break
+            case "playerItemChange":
+                plugin.onPlayerItemChange(player: player, item: currentItem)
+                break
+            default: break
+            }
+        }
     }
 
 }

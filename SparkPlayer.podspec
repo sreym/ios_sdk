@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SparkPlayer'
-  s.version          = '1.0.1-spark.1.89.636'
+  s.version          = '1.0.1-spark.1.89.960'
   s.summary          = 'Spark video player'
 
   s.description      = <<-DESC
@@ -12,7 +12,7 @@ Spark video player.
   s.author           = 'holaspark.com'
   s.source           = {
     :git => 'https://github.com/hola/spark_ios_sdk.git',
-    :tag => 'v1.89.636'
+    :tag => 'v1.89.960'
   }
 
   s.ios.deployment_target = '10.0'
@@ -26,4 +26,5 @@ Spark video player.
 
   s.frameworks = 'UIKit', 'AVKit', 'AVFoundation'
   s.dependency 'SparkLib', '~> 1.3'
+  s.dependency 'GoogleAds-IMA-iOS-SDK', '~> 3.7'
 end

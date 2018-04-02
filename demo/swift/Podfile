@@ -1,21 +1,29 @@
 platform :ios, '10.0'
 use_frameworks!
 
-# use local version to simplify qa & release process
-pod 'SparkLib', :path => '../../'
-
-def add_spark
-  pod 'SparkPlayer', :path => '../../'
+def add_spark_lib
+  # use local version to simplify qa & release process
+  pod 'SparkLib', :path => '../../'
 end
 
 target 'spark-demo' do
-  add_spark
+  add_spark_lib
+  pod 'SparkPlayer', :path => '../../'
+  pod 'GoogleAds-IMA-iOS-SDK', '~> 3.7'
 end
 
 target 'preview-notification-content' do
-  add_spark
+  add_spark_lib
 end
 
 target 'preview-notification-service' do
-  add_spark
+  add_spark_lib
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+    end
+  end
 end

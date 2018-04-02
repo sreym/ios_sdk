@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		14E5EF10AECCCE520E1F7F89 /* Pods_spark_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152DA6F047EDFBB1D48482A6 /* Pods_spark_demo.framework */; };
-		2D5E0A7C204401C900AEFBBE /* preview_hq.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D5E0A7B204401C800AEFBBE /* preview_hq.mp4 */; };
 		2D5E214D2029DE0B00B0A2C1 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E214C2029DE0B00B0A2C1 /* NotificationService.swift */; };
 		2D5E21512029DE0C00B0A2C1 /* preview-notification-service.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2D5E214A2029DE0B00B0A2C1 /* preview-notification-service.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2D8F3659205902D3009292C2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2D8F3658205902D3009292C2 /* Settings.bundle */; };
@@ -23,7 +22,6 @@
 		97D8739D2047ED2500821325 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D8739C2047ED2500821325 /* StartViewController.swift */; };
 		97D8739F2047F76400821325 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D8739E2047F76400821325 /* VideoTableViewCell.swift */; };
 		97D873A12047F80300821325 /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D873A02047F80300821325 /* VideoListViewController.swift */; };
-		EA309E59201B555E001AD6D2 /* preview.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EA309E58201B552C001AD6D2 /* preview.mp4 */; };
 		EAD788A8201B1D14005A917D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD788A7201B1D14005A917D /* ViewController.swift */; };
 		EADF80A92019D96D007EF10B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADF80A82019D96D007EF10B /* AppDelegate.swift */; };
 		EADF80AE2019D96D007EF10B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADF80AC2019D96D007EF10B /* Main.storyboard */; };
@@ -67,7 +65,6 @@
 		152DA6F047EDFBB1D48482A6 /* Pods_spark_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spark_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18014C481E44BE42833FB612 /* Pods-preview-notification-content.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-preview-notification-content.release.xcconfig"; path = "Pods/Target Support Files/Pods-preview-notification-content/Pods-preview-notification-content.release.xcconfig"; sourceTree = "<group>"; };
 		2D5C549B20459D670088D3DB /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
-		2D5E0A7B204401C800AEFBBE /* preview_hq.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = preview_hq.mp4; sourceTree = "<group>"; };
 		2D5E214520299FD800B0A2C1 /* spark-demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "spark-demo.entitlements"; sourceTree = "<group>"; };
 		2D5E214A2029DE0B00B0A2C1 /* preview-notification-service.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "preview-notification-service.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D5E214C2029DE0B00B0A2C1 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
@@ -88,7 +85,6 @@
 		97D873A02047F80300821325 /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
 		BAE372F741AE2B08A852E22B /* Pods-spark-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spark-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-spark-demo/Pods-spark-demo.release.xcconfig"; sourceTree = "<group>"; };
 		BBE6CAB29B4838041A1B5B8A /* Pods_preview_notification_service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_preview_notification_service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA309E58201B552C001AD6D2 /* preview.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = preview.mp4; sourceTree = "<group>"; };
 		EAD788A7201B1D14005A917D /* ViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; path = ViewController.swift; sourceTree = "<group>"; };
 		EADF80A52019D96D007EF10B /* spark-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "spark-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADF80A82019D96D007EF10B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -174,19 +170,9 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		EA309E57201B551F001AD6D2 /* resources */ = {
-			isa = PBXGroup;
-			children = (
-				2D5E0A7B204401C800AEFBBE /* preview_hq.mp4 */,
-				EA309E58201B552C001AD6D2 /* preview.mp4 */,
-			);
-			path = resources;
-			sourceTree = "<group>";
-		};
 		EADF809C2019D96D007EF10B = {
 			isa = PBXGroup;
 			children = (
-				EA309E57201B551F001AD6D2 /* resources */,
 				EADF80A72019D96D007EF10B /* spark-demo */,
 				2DC444D520245CBC0010A70A /* preview-notification-content */,
 				2D5E214B2029DE0B00B0A2C1 /* preview-notification-service */,
@@ -362,10 +348,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA309E59201B555E001AD6D2 /* preview.mp4 in Resources */,
 				EADF80B32019D96D007EF10B /* LaunchScreen.storyboard in Resources */,
 				EADF80B02019D96D007EF10B /* Assets.xcassets in Resources */,
-				2D5E0A7C204401C900AEFBBE /* preview_hq.mp4 in Resources */,
 				2D8F3659205902D3009292C2 /* Settings.bundle in Resources */,
 				EADF80AE2019D96D007EF10B /* Main.storyboard in Resources */,
 			);
@@ -411,11 +395,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-spark-demo/Pods-spark-demo-frameworks.sh",
+				"${PODS_ROOT}/GoogleAds-IMA-iOS-SDK/GoogleInteractiveMediaAds/GoogleInteractiveMediaAds.framework",
 				"${PODS_ROOT}/../../../lib/dist/SparkLib.framework",
 				"${BUILT_PRODUCTS_DIR}/SparkPlayer/SparkPlayer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleInteractiveMediaAds.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SparkLib.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SparkPlayer.framework",
 			);
