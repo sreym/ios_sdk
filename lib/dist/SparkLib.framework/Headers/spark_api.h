@@ -43,12 +43,6 @@ typedef NS_ENUM(int, SparkLogLevel) {
 -(void)perr:(NSString* _Nonnull)id msg:(NSString* _Nullable)msg;
 @end
 
-// Protocol for communicating with SparkPlayer
-@protocol SparkLibPlayerDelegate
-@optional
--(id<SparkThumbnailsDelegate> _Nonnull)get_thumbnails_delegate;
-@end
-
 // Preview-enabled customized view controller.
 // Inherit this class in your NotificationContentExtension.
 __IOS_AVAILABLE(10.0) __TVOS_PROHIBITED __WATCHOS_PROHIBITED

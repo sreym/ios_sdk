@@ -11,9 +11,21 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SparkModule
+-(void)start;
+-(void)get_state;
+-(void)set_state;
+@end
+
 // Protocol for communicating with Thumbnails feature
 @protocol SparkThumbnailsDelegate
 -(UIView*)get_thumbnail_container;
+@end
+
+// Protocol for communicating with SparkPlayer
+@protocol SparkLibPlayerDelegate
+@optional
+-(id<SparkThumbnailsDelegate>)get_thumbnails_delegate;
 @end
 
 #endif /* spark_api_interface_h */

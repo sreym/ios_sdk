@@ -735,7 +735,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7FFB6E4685CAE5E3BCBA9FF4 /* Pods-spark-demo.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "spark-demo/spark-demo.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -756,7 +755,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BAE372F741AE2B08A852E22B /* Pods-spark-demo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "spark-demo/spark-demo.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
